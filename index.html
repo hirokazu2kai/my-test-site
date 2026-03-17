@@ -1,1 +1,97 @@
-Hello World
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SBIK 統合ポータル</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* 画面全体の固定 */
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background: #000; 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* アプリを表示する窓（iframe） */
+        #app-frame {
+            width: 100%;
+            height: calc(100vh - 70px); /* 下のメニュー分を引く */
+            border: none;
+            background: white;
+        }
+
+        /* 下部ナビゲーションバー */
+        nav { 
+            position: fixed; 
+            bottom: 0; 
+            width: 100%; 
+            height: 70px;
+            background: #111; 
+            display: flex; 
+            justify-content: space-around; 
+            align-items: center;
+            border-top: 1px solid #333;
+            z-index: 1000;
+        }
+
+        /* メニューボタン */
+        .nav-item { 
+            color: #666; 
+            text-align: center; 
+            flex: 1; 
+            cursor: pointer; 
+            font-size: 11px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 選択されている時の色（ネオンブルー） */
+        .nav-item.active { 
+            color: #00f2ff; 
+        }
+
+        .nav-item i { 
+            display: block; 
+            font-size: 28px; 
+            margin-bottom: 2px; 
+        }
+
+        /* タップ時の反応 */
+        .nav-item:active {
+            opacity: 0.5;
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+
+<iframe id="app-frame" src="https://script.google.com/macros/s/AKfycbwWbSECz8Tm7581UzAkVHQJlNfR02UuTBVrVCPJtdklO1ep1LbOWN94XgDBLT3gethk2A/exec"></iframe>
+
+<nav>
+    <div class="nav-item active" onclick="switchApp(this, 'https://script.google.com/macros/s/AKfycbwWbSECz8Tm7581UzAkVHQJlNfR02UuTBVrVCPJtdklO1ep1LbOWN94XgDBLT3gethk2A/exec')">
+        <i class="material-icons">event_note</i><span>スケジュール</span>
+    </div>
+    <div class="nav-item" onclick="switchApp(this, 'https://script.google.com/macros/s/AKfycbxqcwTvI13csRrX-k1X8jN8TFW0luiuykiJmxAWjVey-kw8uMxF0cTnEtIIjZUH2Zu3/exec')">
+        <i class="material-icons">map</i><span>地図</span>
+    </div>
+</nav>
+
+<script>
+    function switchApp(el, url) {
+        // 全てのメニューから「active」を消す
+        document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+        // クリックしたものに「active」をつける
+        el.classList.add('active');
+        // iframeのURLを書き換えて画面を切り替える
+        document.getElementById('app-frame').src = url;
+    }
+</script>
+
+</body>
+</html>
