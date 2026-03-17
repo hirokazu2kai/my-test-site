@@ -25,17 +25,14 @@
         }
 
         /* 下部ナビゲーションバー */
-        nav { 
-            position: fixed; 
-            bottom: 0; 
-            width: 100%; 
-            height: 70px;
-            background: #111; 
-            display: flex; 
-            justify-content: space-around; 
-            align-items: center;
-            border-top: 1px solid #333;
-            z-index: 1000;
+       nav { 
+            display: none; /* これで黒いバーが消えます */
+        }
+
+        #app-frame {
+            width: 100%;
+            height: 100vh; /* 画面いっぱいにアプリを表示します */
+            border: none;
         }
 
         /* メニューボタン */
