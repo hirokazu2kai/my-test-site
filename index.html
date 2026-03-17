@@ -70,13 +70,9 @@
 
 <iframe id="app-frame" src="https://script.google.com/macros/s/AKfycbwWbSECz8Tm7581UzAkVHQJlNfR02UuTBVrVCPJtdklO1ep1LbOWN94XgDBLT3gethk2A/exec"></iframe>
 
-<nav>
-    <div class="nav-item active" onclick="switchApp(this, 'https://script.google.com/macros/s/AKfycbwWbSECz8Tm7581UzAkVHQJlNfR02UuTBVrVCPJtdklO1ep1LbOWN94XgDBLT3gethk2A/exec')">
-        <i class="material-icons">event_note</i><span>スケジュール</span>
-    </div>
-    <div class="nav-item" onclick="switchApp(this, 'https://script.google.com/macros/s/AKfycbxqcwTvI13csRrX-k1X8jN8TFW0luiuykiJmxAWjVey-kw8uMxF0cTnEtIIjZUH2Zu3/exec')">
-        <i class="material-icons">map</i><span>地図</span>
-    </div>
+<nav style="display: none;">
+    <div id="btn-sch" onclick="switchApp(this, 'https://script.google.com/macros/s/AKfycbwWbSECz8Tm7581UzAkVHQJlNfR02UuTBVrVCPJtdklO1ep1LbOWN94XgDBLT3gethk2A/exec')"></div>
+    <div id="btn-map" onclick="switchApp(this, 'https://script.google.com/macros/s/AKfycbxqcwTvI13csRrX-k1X8jN8TFW0luiuykiJmxAWjVey-kw8uMxF0cTnEtIIjZUH2Zu3/exec')"></div>
 </nav>
 
 <script>
